@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE2.04 - Projet intégratif</title>
+    <link rel="stylesheet" href="assets/style/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">&lt;/HALTER-TISLER Louise&gt;</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Accueil</a></li>
+
+                    <li><a href="../projets.html">Projets</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+
+                <!-- TITRE -->
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <div class="section-tag">SAÉ 2.04</div>
+
+                    <h2>Projet intégratif</h2>
+
+                </div>
+
+                <!-- TEXTE GAUCHE / DETAILS DROITE -->
+                <div class="about-content">
+
+                    <div class="about-text">
+                        <h3>Objectif</h3>
+                        <p> Dans le cadre d'un projet collaboratif, l'objectif était de concevoir et déployer une solution complète d'accès et de manipulation de données au travers d'un site web. L'application développée est un Gestionnaire de Trafic Aérien permettant de créer des aéroports, des pistes, des vols, des avions, des types d'avions et des compagnies.
+                        L'ensemble des services devait être déployé sur une machine virtuelle Linux configurée par nos soins : application Django servie par Gunicorn, reverse proxy Nginx et base de données MySQL.</p>
+                        <h3>Réalisations techniques</h3>
+                        <ul class="styled-list">
+                            <li>Le projet global a consisté à concevoir l'architecture de l'application via le framework Django et à modéliser le schéma relationnel d'une base de données MySQL hébergée sous Linux.</li>
+                           <li> En tant que co-développeuse, j'ai pris en charge une partie de l'organisation du projet et plusieurs CRUDs (avions, compagnies, vols, pistes, aéroports et types d'avions)</li>
+                           
+                        
+                        </ul>
+
+                      
+
+                        <h3>Compétences R&amp;T mobilisées</h3>
+                        <ul class="styled-list">
+                            <li>AC0314 — Connaître l'architecture et les technologies d'un site Web.
+                            <li>AC0315 — Choisir les mécanismes de gestion de données adaptés au développement de l'outil.</li>
+                            <li>AC0316 — S'intégrer dans un environnement propice au développement et au travail collaboratif.
+                            <li>AC0312 — Lire, exécuter, corriger et modifier un programme.</li>
+                        
+                        <h3>Mes tâches</h3>
+                        <ul class="styled-list">
+                            <li>J'ai réalisé le Diagramme de Gantt : il a permis à mon groupe de s'organiser au niveau de la repartition des tâches et à nous projeter pour estimer à quel moment nous ferions telle tâches</li>
+                            <li>J'ai réalisé le CRUD avions : il permet de renseigner l'immatriculation / nom de l'appareil (ex : F-GKXA), la compagnie aérienne (il faut sélectionner une compagnie aérienne existant dans le menu déroulant), le type d'avion (il faut sélectionner un type d'avion existant dans le menu déroulant)</li>
+                            <img src="assets/img/avions.png" alt="Avions">
+                            <li>Le CRUD types d'avions : il permet de renseigner la marque / constructeur (ex : Airbus), le modèle (ex : A320), une description (facultative), une photo de l'appareil à partir du gestionnaire de fichier, ainsi qu'une longueur de piste minimale (ex : 2 000 mètres) </li>
+                            <img src="assets/img/typesavions.png" alt="Typesavions">
+                            <li>Le CRUD compagnies : il permet de renseigner le nom de la compagnie ( ex : Air France), le pays (ex : France), ainsi qu'une description (facultative)</li>
+                            <img src="assets/img/compagnies.png" alt="Compagnies">
+                            <li>Un template Django confirm_delete.html pour les avions, les types d'avions ainsi que pour les compagnies qui sert à afficher une page de confirmation avant la suppression d'un élément.
+                            Il hérite du template principal base.html et affiche un message d'avertissement demandant à l'utilisateur de confirmer la suppression d'un objet dont le nom est stocké dans {{ titre_objet }}. Il propose deux actions : confirmer la suppression via un formulaire sécurisé par un token CSRF, ou annuler et revenir à la page précédente grâce au lien {{ retour_url }}. L'objectif est d'éviter les suppressions accidentelles en demandant une validation explicite de l'utilisateur.</li>
+                            <img src="assets/img/confirmdelete.png" alt="ConfirmDelete">
+                       </ul>
+                       
+                    </div>
+
+                    <div class="detail-panel">
+                        <div class="detail-meta">
+                            <span>Année</span>
+                            <strong>2025-2026</strong>
+                        </div>
+                        <div class="detail-meta">
+                            <span>Équipe</span>
+                            <strong>3 étudiants</strong>
+                        </div>
+                        <div class="detail-meta">
+                            <span>Durée</span>
+                            <strong>25 heures</strong>
+                        </div>
+                        <div class="detail-meta">
+                            <span>Semestre</span>
+                            <strong>S2</strong>
+                        </div>
+
+                        <h3>Technologies</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python / Django </span>
+                            <span class="tech-tag">HTML / CSS</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Linux VM</span>
+                            <span class="tech-tag">Gantt</span>
+                          
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- GALERIE -->
+                <div class="project-detail-section">
+                    <h3>Preuve</h3>
+                    <div class="gallery-grid">
+                        <figure class="gallery-item">
+                            <p>Site Web Gestion Trafic Aérien</p>
+                            <img src="assets/img/sae204.png" alt="SiteWeb">
+                            <p>Diagramme de Gantt</p>
+                            <img src="assets/img/sae2031.png" alt="Gantt">
+                            <img src="assets/img/sae2032.png" alt="GanttSuite">
+                         
+                        </figure>
+                    </div>
+                </div>
+                <div>
+                    <h3>Résumé en anglais</h3>
+                    <p>This project focused on designing and deploying a complete web application for air trafic management using Django. The goal was to create a tool able to manage airports, aircrafts, airlines, flights, runways and aircraft types through a structured MySQL database. I contributed to the project organization (Gantt), the aircrafts, aircraft types and airlines CRUD features.
+                    The application was also deployed by one of my mate on a Linux virtual machine with MySQL, Gunicorn and Nginx, which helped me understand how a Django application connects to a database and how it can be prepared for a server environment. This SAE strengthened my skills in web development, database design, collaborative work and basic application deployment.</p>
+                </div>
+
+
+                </div>
+                <div class="section-center">
+                    <a href="projets.html" class="btn btn-secondary">
+                        Retour au portfolio
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 HALTER-TISLER Louise</p>
+        </div>
+    </footer>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"151a8f6b91ce417fb6e96c352b16b2d1","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+</html>

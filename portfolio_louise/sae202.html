@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE2.02 - Mesurer et caractériser un signal ou un système</title>
+    <link rel="stylesheet" href="assets/style/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">&lt;/HALTER-TISLER Louise&gt;</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Accueil</a></li>
+
+                    <li><a href="../projets.html">Projets</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+
+                <!-- TITRE -->
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <div class="section-tag">SAÉ 2.02</div>
+
+                    <h2>Mesurer et caractériser un signal ou un système</h2>
+
+                </div>
+
+                <!-- TEXTE GAUCHE / DETAILS DROITE -->
+                <div class="about-content">
+
+                    <div class="about-text">
+                        <h3>Objectif</h3>
+                        <p>
+                        Création d'une Web Radio portable capable de diffuser des flux audio Internet (MP3/AAC) en stéréo. L'objectif est d'interfacer des composants matériels et de développer l'interface logicielle pour un contrôle distant via smartphone.                        </p>
+
+                        <h3>Architecture réalisée</h3>
+                        <ul class="styled-list">
+                            <li>Assemblage matériel d'un microcontrôleur ESP32 (Adafruit HUZZAH32) et d'un décodeur audio matériel VS1053 communiquant via le bus SPI.</li>
+                            <li>Développement en C/C++ sous l'IDE Arduino avec gestion dynamique de la connexion Wi-Fi via WiFiManager.</li>
+                            <li>Implémentation du traitement audio avancé incluant le contrôle du volume, un égaliseur 5 bandes et la spatialisation du son.</li>
+                            <li>  Intégration du protocole léger MQTT (bibliothèque PubSubClient) pour permettre le pilotage bidirectionnel complet de la radio depuis l'application mobile IoT MQTT Panel.</li>
+                            <li> Le développement itératif a abouti à une version finale robuste assurant la synchronisation en temps réel des commandes matérielles et logicielles.</li>
+                        </ul>
+
+                        <h3>Compétences R&amp;T mobilisées</h3>
+                        <ul class="styled-list">
+                            <li>AC13.02 — Lire, exécuter, corriger et modifier un programme.</li>
+                            <li>AC13.03 — Traduire un algorithme, dans un langage et pour un environnement donné.</li>
+                            <li>AC11.01 — Maîtriser les lois fondamentales de l'électricité afin d'intervenir sur des équipements de réseaux et télécommunications.</li>
+
+                       </ul>
+                    </div>
+
+                    <div class="detail-panel">
+                        <div class="detail-meta">
+                            <span>Année</span>
+                            <strong>2025-2026</strong>
+                        </div>
+                        <div class="detail-meta">
+                            <span>Équipe</span>
+                            <strong>2 personnes</strong>
+                        </div>
+                        <div class="detail-meta">
+                            <span>Durée</span>
+                            <strong>19 heures</strong>
+                        </div>
+                        <div class="detail-meta">
+                            <span>Semestre</span>
+                            <strong>S2</strong>
+                        </div>
+
+                        <h3>Technologies</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">ESP32</span>
+                            <span class="tech-tag">VS1053</span>
+                            <span class="tech-tag">C/C++</span>
+                            <span class="tech-tag">Arduino IDE</span>
+                            <span class="tech-tag">MQTT</span>
+                            <span class="tech-tag">Wi-Fi</span>
+                            <span class="tech-tag">IoT MQTT Panel</span>
+                          
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- GALERIE -->
+                <div class="project-detail-section">
+                    <h3>Preuve</h3>
+                    <div class="gallery-grid">
+                        <figure class="gallery-item">
+                            <img src="assets/img/sae202.png" alt="Arduino Feather ESP32">
+                            <p>Application MQTT sur téléphone</p>
+                            <img src="assets/img/sae2021.png" alt="Application MQTT">
+                         
+                        </figure>
+                    </div>
+                </div>
+
+
+                </div>
+                <div class="section-center">
+                    <a href="projets.html" class="btn btn-secondary">
+                        Retour au portfolio
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 HALTER-TISLER Louise</p>
+        </div>
+    </footer>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"151a8f6b91ce417fb6e96c352b16b2d1","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+</html>

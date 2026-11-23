@@ -1,0 +1,656 @@
+/* ==========================================================================
+   PORTFOLIO STYLESHEET - Louise Halter-Tisler
+   Theme: Minimalist Tech & Botanical Rose (Sober & Original)
+   ========================================================================== */
+
+:root {
+    /* Palette de Couleurs */
+    --bg-main: #fdfafb;        /* Fond chaud blanc-crème très légèrement rosé */
+    --bg-card: #ffffff;        /* Blanc pur pour détacher les cartes et grilles */
+    --text-main: #2e2627;      /* Expresso/Charbon foncé, plus doux que le noir pur */
+    --text-muted: #736466;     /* Taupe adouci pour les textes secondaires */
+    
+    --rose-light: #f7d6d7;     /* Rose pétale très clair pour les surbrillances */
+    --rose-primary: #e5989b;   /* Vieux rose élégant pour les éléments clés */
+    --rose-dark: #b56576;      /* Rose baie/vin profond pour le contraste et les liens */
+    --accent-sage: #9ca995;    /* Vert sauge subtil pour équilibrer la thématique florale */
+    
+    --border-subtle: #f2e6e7;  /* Bordures fines teintées de rose */
+    --shadow-subtle: rgba(181, 101, 118, 0.04);
+    --shadow-hover: rgba(181, 101, 118, 0.12);
+    
+    /* Typographies (Basées sur tes imports Outfit & JetBrains Mono) */
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    
+    /* Transitions fluides */
+    --transition: cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+}
+
+/* --- Initialisation & Styles Globaux --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Sélection de texte personnalisée */
+::selection {
+    background-color: var(--rose-light);
+    color: var(--rose-dark);
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    margin-bottom: 2rem;     /* Espace optionnel sous l'image */
+}
+
+/* Optionnel : pour s'assurer que l'image ne dépasse pas de l'écran sur mobile */
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Typographie & Titres --- */
+h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+/* Soulignement original et sobre avec un glyphe de fleur */
+h2::after {
+    content: '❀';
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    font-size: 0.9rem;
+    color: var(--rose-primary);
+    width: 100%;
+    text-align: left;
+    letter-spacing: 4px;
+    border-bottom: 1px solid var(--rose-light);
+    padding-bottom: 4px;
+}
+
+h3 {
+    font-size: 1.45rem;
+    color: var(--rose-dark);
+    margin-bottom: 1.2rem;
+}
+
+h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-sage);
+    font-family: var(--font-mono);
+    margin-bottom: 0.8rem;
+}
+
+p {
+    margin-bottom: 1.4rem;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--text-muted);
+}
+
+p strong {
+    font-weight: 600;
+    color: var(--rose-dark);
+}
+
+/* --- Barre de Navigation (Header) --- */
+header {
+    background: rgba(253, 250, 251, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 18px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--rose-dark);
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a, nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    position: relative;
+    padding: 6px 0;
+}
+
+.nav-links a:hover, nav a:hover {
+    color: var(--rose-dark);
+}
+
+/* Animation de survol fluide et organique */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--rose-primary);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* --- Section d'Accueil (Hero) --- */
+.hero {
+    padding: 120px 0 90px;
+    position: relative;
+}
+
+/* Fleur discrète en arrière-plan transparent */
+.hero::before {
+    content: '✿';
+    position: absolute;
+    right: 8%;
+    top: 15%;
+    font-size: 14rem;
+    color: rgba(229, 152, 155, 0.05);
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: #fff0f1;
+    color: var(--rose-dark);
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border: 1px solid var(--border-subtle);
+}
+
+.hero p {
+    max-width: 720px;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+/* Boutons d'action (CTA) */
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--rose-dark);
+    color: #ffffff;
+    border: 1px solid var(--rose-dark);
+}
+
+.btn-primary:hover {
+    background-color: #9c4c5d;
+    border-color: #9c4c5d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--shadow-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--rose-dark);
+    border: 1px solid var(--rose-primary);
+}
+
+.btn-secondary:hover {
+    background-color: #fff5f6;
+    border-color: var(--rose-dark);
+    transform: translateY(-2px);
+}
+
+.btn-bleu {
+    background-color: #9c4c5d; /* La couleur bleue de ton image */
+    color: #ffffff;            /* Texte en blanc */
+    padding: 12px 24px;        /* Espacement interne (hauteur, largeur) */
+    text-decoration: none;     /* Enlève le soulignement du lien */
+    border-radius: 8px;        /* Coins arrondis */
+    font-weight: 600;          /* Texte en gras */
+    display: inline-block;     /* Permet de bien gérer le padding */
+    transition: background-color 0.3s ease; /* Petit effet au survol */
+}
+
+/* Effet quand on passe la souris dessus */
+.btn-bleu:hover {
+    background-color: #9c4c5d78; /* Un bleu un peu plus foncé au survol */
+}
+
+/* --- Sections Générales --- */
+section {
+    padding: 90px 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-header {
+    margin-bottom: 4.5rem;
+    text-align: left;
+}
+
+/* Alignements automatiques pour les titres centrés en HTML */
+.section-header[style*="text-align: center"],
+div[style*="text-align: center"] .section-header {
+    text-align: center !important;
+}
+.section-header[style*="text-align: center"] h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-sage);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.section-description {
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 620px;
+}
+
+.section-center {
+    text-align: center;
+    margin-top: 3.5rem;
+}
+
+/* --- Présentation & Compétences --- */
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skill-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px var(--shadow-subtle);
+    transition: var(--transition);
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--rose-primary);
+    box-shadow: 0 10px 28px var(--shadow-hover);
+}
+
+.skill-item strong {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+/* --- Section Homelab Architecture --- */
+.homelab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+}
+
+.homelab-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 4px 20px var(--shadow-subtle);
+    transition: var(--transition);
+}
+
+.homelab-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--rose-primary);
+    box-shadow: 0 14px 36px var(--shadow-hover);
+}
+
+.homelab-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+/* Badges Techniques (Pills) */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.tech-tag, .tags span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #fff6f7;
+    color: var(--rose-dark);
+    border: 1px solid #fce8ea;
+    padding: 4px 12px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+/* Alternance élégante : Un badge sur deux s'affiche en vert sauge doux */
+.tech-tag:nth-child(even) {
+    background: #f4f6f3;
+    color: #4a5d43;
+    border-color: #e5eae2;
+}
+
+/* --- Grilles de Projets Académiques (SAÉ) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+    gap: 32px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    box-shadow: 0 6px 24px var(--shadow-subtle);
+    transition: var(--transition);
+    padding: 36px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--rose-primary);
+    box-shadow: 0 16px 44px var(--shadow-hover);
+}
+
+.project-header {
+    border-bottom: 1px dashed var(--border-subtle);
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.project-semester {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-sage);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.project-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.project-objectives h4 {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Listes personnalisées et puces en forme d'étoiles */
+ul:not(.nav-links) {
+    list-style: none;
+}
+
+ul:not(.nav-links) li, .styled-list li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+ul:not(.nav-links) li::before, .styled-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 2px;
+    color: var(--rose-primary);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* Remplacement par une vraie fleur pour les listes spécifiques (.styled-list) */
+.styled-list li::before {
+    content: '❀' !important;
+    top: -1px;
+    font-size: 0.9rem;
+}
+
+/* --- Pages de Détails des SAÉ (Fiches Individuelles) --- */
+.detail-panel {
+    background: #fffcfc;
+    border: 1px solid var(--border-subtle);
+    padding: 28px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.detail-meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--border-subtle);
+    font-size: 0.95rem;
+}
+
+.detail-meta:last-of-type {
+    border-bottom: none;
+}
+
+.detail-meta span {
+    color: var(--text-muted);
+}
+
+.detail-meta strong {
+    color: var(--text-main);
+}
+
+/* Captures d'écrans de serveurs, scripts ou topologies */
+.preuve-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+    margin: 24px 0 10px;
+    box-shadow: 0 6px 18px var(--shadow-subtle);
+    transition: var(--transition);
+}
+
+.preuve-img:hover {
+    transform: scale(1.01);
+}
+
+em {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-style: italic;
+    display: block;
+    margin-bottom: 24px;
+}
+
+/* --- Tableaux de Mesures, VLANs et Réseaux --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0;
+    font-size: 0.95rem;
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--shadow-subtle);
+    border: 1px solid var(--border-subtle);
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+th {
+    background-color: #fff4f5;
+    color: var(--rose-dark);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 2px solid var(--border-subtle);
+}
+
+td {
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #fffbfa;
+    color: var(--text-main);
+}
+
+/* --- Pied de Page (Footer) --- */
+footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-subtle);
+    padding: 48px 0;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: var(--rose-dark);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--rose-primary);
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--text-main);
+    border-bottom-style: solid;
+}
+
+/* --- Adaptabilité Mobile (Responsive) --- */
+@media (max-width: 992px) {
+    h1 { font-size: 2.6rem; }
+    h2 { font-size: 1.9rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .about-content, .skills-grid { grid-template-columns: 1fr; }
+    nav { flex-direction: column; gap: 16px; }
+    .hero { padding: 60px 0 40px; }
+    .hero::before { display: none; }
+}
+
+
